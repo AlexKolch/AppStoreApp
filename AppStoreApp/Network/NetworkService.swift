@@ -10,8 +10,8 @@ import Foundation
 class NetworkService {
    static let shared = NetworkService()
 
-    func fetchApps(completion: @escaping ([Results], Error?) -> ()) {
-        let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
+    func fetchApps(searchTerm: String, completion: @escaping ([Results], Error?) -> ()) {
+        let urlString = "https://itunes.apple.com/search?term=\(searchTerm)&entity=software"
 
         guard let url = URL(string: urlString) else {return}
 

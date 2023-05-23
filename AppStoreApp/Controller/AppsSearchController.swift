@@ -13,14 +13,26 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
     fileprivate let cellID = "cellID"
 
     fileprivate var appResults = [Results]()
+    private var timer: Timer?
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
+
+    private let enterSearchLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Please enter search above..."
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
-
         collectionView.register(SearchResultsCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView.addSubview(enterSearchLabel)
+        enterSearchLabel.fillSuperview(padding: .init(top: 100, left: 60, bottom: 0, right: 50))
 
-        fetchITunesApps()
+        setupSearchBar()
+      //  fetchITunesApps()
     }
 
     init() {
@@ -32,26 +44,34 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
     }
 
 
-    fileprivate func fetchITunesApps() {
-        NetworkService.shared.fetchApps { results, error in
-            
-            if let error = error {
-                print("Failed to fetch apps:", error)
-                return
-            }
+    fileprivate func setupSearchBar() {
+        definesPresentationContext = true
+        navigationItem.searchController = self.searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.delegate = self
+    }
 
-            self.appResults = results ///get back our result
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-}
+//    fileprivate func fetchITunesApps() {
+//        NetworkService.shared.fetchApps(searchTerm: "Twitter") { results, error in
+//
+//            if let error = error {
+//                print("Failed to fetch apps:", error)
+//                return
+//            }
+//
+//            self.appResults = results ///get back our result
+//            DispatchQueue.main.async {
+//                self.collectionView.reloadData()
+//            }
+//        }
+//    }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width, height: 300)
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        enterSearchLabel.isHidden = appResults.count != 0
         return appResults.count
     }
 
@@ -61,5 +81,21 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         cell.appResult = appResults[indexPath.item]
         
         return cell
+    }
+}
+
+extension AppsSearchController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        ///Delay before search
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+            NetworkService.shared.fetchApps(searchTerm: searchText) { results, error in
+                self.appResults = results ///get back our result
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        })
     }
 }

@@ -30,7 +30,6 @@ class SearchResultsCell: UICollectionViewCell {
 
     let iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .red
         imageView.widthAnchor.constraint(equalToConstant: 64).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 64).isActive = true
         imageView.layer.cornerRadius = 12
@@ -74,7 +73,6 @@ class SearchResultsCell: UICollectionViewCell {
 
     func createScreenshotImageView() -> UIImageView {
         let imageView = UIImageView()
-        imageView.backgroundColor = .blue
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
         imageView.layer.borderWidth = 0.5
