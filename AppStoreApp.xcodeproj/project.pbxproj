@@ -20,6 +20,7 @@
 		FCBB765D2A1CE82600854A41 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB765C2A1CE82600854A41 /* VerticalStackView.swift */; };
 		FCBB76602A1D064000854A41 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB765F2A1D064000854A41 /* SearchResult.swift */; };
 		FCBB76632A1D127000854A41 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76622A1D127000854A41 /* NetworkService.swift */; };
+		FCBB76672A1D208B00854A41 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FCBB76662A1D208B00854A41 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCBB76672A1D208B00854A41 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +154,9 @@
 			dependencies = (
 			);
 			name = AppStoreApp;
+			packageProductDependencies = (
+				FCBB76662A1D208B00854A41 /* SDWebImage */,
+			);
 			productName = AppStoreApp;
 			productReference = FC536F2C2A1BD03200C7EE51 /* AppStoreApp.app */;
 			productType = "com.apple.product-type.application";
@@ -180,6 +185,9 @@
 				Base,
 			);
 			mainGroup = FC536F232A1BD03200C7EE51;
+			packageReferences = (
+				FCBB76652A1D208B00854A41 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = FC536F2D2A1BD03200C7EE51 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -442,6 +450,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FCBB76652A1D208B00854A41 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FCBB76662A1D208B00854A41 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCBB76652A1D208B00854A41 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FC536F242A1BD03200C7EE51 /* Project object */;
 }
