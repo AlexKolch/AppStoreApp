@@ -18,6 +18,7 @@
 		FC536F4A2A1BE6CA00C7EE51 /* SearchResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC536F492A1BE6CA00C7EE51 /* SearchResultsCell.swift */; };
 		FCBB765B2A1CDFEF00854A41 /* 05_UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB765A2A1CDFEF00854A41 /* 05_UIView+Layout.swift */; };
 		FCBB765D2A1CE82600854A41 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB765C2A1CE82600854A41 /* VerticalStackView.swift */; };
+		FCBB76602A1D064000854A41 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB765F2A1D064000854A41 /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FC536F492A1BE6CA00C7EE51 /* SearchResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsCell.swift; sourceTree = "<group>"; };
 		FCBB765A2A1CDFEF00854A41 /* 05_UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "05_UIView+Layout.swift"; sourceTree = "<group>"; };
 		FCBB765C2A1CE82600854A41 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
+		FCBB765F2A1D064000854A41 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 		FC536F232A1BD03200C7EE51 = {
 			isa = PBXGroup;
 			children = (
+				FCBB765E2A1D063200854A41 /* Model */,
 				FCBB76592A1CDFB800854A41 /* Helpers */,
 				FC536F2E2A1BD03200C7EE51 /* AppStoreApp */,
 				FC536F2D2A1BD03200C7EE51 /* Products */,
@@ -104,6 +107,14 @@
 				FCBB765C2A1CE82600854A41 /* VerticalStackView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FCBB765E2A1D063200854A41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FCBB765F2A1D064000854A41 /* SearchResult.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCBB765B2A1CDFEF00854A41 /* 05_UIView+Layout.swift in Sources */,
+				FCBB76602A1D064000854A41 /* SearchResult.swift in Sources */,
 				FC536F4A2A1BE6CA00C7EE51 /* SearchResultsCell.swift in Sources */,
 				FC536F442A1BD09A00C7EE51 /* BaseTabBarController.swift in Sources */,
 				FC536F342A1BD03200C7EE51 /* ViewController.swift in Sources */,
