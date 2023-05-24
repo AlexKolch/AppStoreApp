@@ -13,6 +13,8 @@ class AppsController: BaseListController, UICollectionViewDelegateFlowLayout {
 
     private let cellId = "cellID"
     private let headerId = "headerID"
+   // fileprivate var editorsGames: AppGroup?
+    fileprivate var appGroups = [AppGroup]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +26,39 @@ class AppsController: BaseListController, UICollectionViewDelegateFlowLayout {
     }
 
     fileprivate func fetchData() {
-        NetworkService.shared.fetchGames { response, error in
-            if let error = error {
-                print("Failed to fetch games:", error)
-                return
+        ///Синхронизация последовательных вызовов
+        let dispatchGroup = DispatchGroup()
+
+        var group1: AppGroup?
+        var group2: AppGroup?
+
+        dispatchGroup.enter()
+        NetworkService.shared.fetchTopPaid { response, error in
+            //self.editorsGames = response
+            dispatchGroup.leave()
+            group1 = response
+//            if let group = response {
+//                self.appGroups.append(group)
+//            }
+//            DispatchQueue.main.async {
+//                self.collectionView.reloadData()
+//            }
+        }
+        dispatchGroup.enter()
+        NetworkService.shared.fetchTopFree { response, error in
+            dispatchGroup.leave()
+            group2 = response
+        }
+        //Completion
+        dispatchGroup.notify(queue: .main) {
+            print("Сompleted dispatch")
+            if let group = group1 {
+                self.appGroups.append(group)
             }
-            print(response?.feed.results)
+            if let group = group2 {
+                self.appGroups.append(group)
+            }
+            self.collectionView.reloadData()
         }
     }
 
@@ -43,11 +72,17 @@ class AppsController: BaseListController, UICollectionViewDelegateFlowLayout {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return appGroups.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppsGroupCell
+
+        let group = appGroups[indexPath.item]
+        
+        cell.titleLabel.text = group.feed.title
+        cell.horizontalController.appGroup = group //передаем во вложенный контр. данные
+        cell.horizontalController.collectionView.reloadData() //обязательно перезагружаем
 
         return cell
     }
@@ -59,5 +94,4 @@ class AppsController: BaseListController, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: 16, left: 0, bottom: 0, right: 0)
     }
-
 }
