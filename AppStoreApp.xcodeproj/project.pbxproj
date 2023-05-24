@@ -24,6 +24,8 @@
 		FCBB76732A1DE0D900854A41 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76722A1DE0D900854A41 /* BaseListController.swift */; };
 		FCBB76782A1DE52E00854A41 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76772A1DE52E00854A41 /* AppsGroupCell.swift */; };
 		FCBB767A2A1DEA0A00854A41 /* AppsHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76792A1DEA0A00854A41 /* AppsHorizontalController.swift */; };
+		FCBB767D2A1E0D6400854A41 /* AppRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB767C2A1E0D6400854A41 /* AppRowCell.swift */; };
+		FCBB767F2A1E0E5E00854A41 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB767E2A1E0E5E00854A41 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		FCBB76722A1DE0D900854A41 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		FCBB76772A1DE52E00854A41 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		FCBB76792A1DEA0A00854A41 /* AppsHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalController.swift; sourceTree = "<group>"; };
+		FCBB767C2A1E0D6400854A41 /* AppRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowCell.swift; sourceTree = "<group>"; };
+		FCBB767E2A1E0E5E00854A41 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				FCBB76762A1DE4FD00854A41 /* Apps */,
-				FC536F492A1BE6CA00C7EE51 /* SearchResultsCell.swift */,
+				FCBB767B2A1E0C1200854A41 /* Search */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,6 +121,7 @@
 			children = (
 				FCBB765A2A1CDFEF00854A41 /* 05_UIView+Layout.swift */,
 				FCBB765C2A1CE82600854A41 /* VerticalStackView.swift */,
+				FCBB767E2A1E0E5E00854A41 /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -167,8 +172,17 @@
 			isa = PBXGroup;
 			children = (
 				FCBB76772A1DE52E00854A41 /* AppsGroupCell.swift */,
+				FCBB767C2A1E0D6400854A41 /* AppRowCell.swift */,
 			);
 			path = Apps;
+			sourceTree = "<group>";
+		};
+		FCBB767B2A1E0C1200854A41 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FC536F492A1BE6CA00C7EE51 /* SearchResultsCell.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +268,11 @@
 				FCBB76712A1DE00700854A41 /* AppsController.swift in Sources */,
 				FC536F4A2A1BE6CA00C7EE51 /* SearchResultsCell.swift in Sources */,
 				FCBB76732A1DE0D900854A41 /* BaseListController.swift in Sources */,
+				FCBB767D2A1E0D6400854A41 /* AppRowCell.swift in Sources */,
 				FC536F442A1BD09A00C7EE51 /* BaseTabBarController.swift in Sources */,
 				FCBB76782A1DE52E00854A41 /* AppsGroupCell.swift in Sources */,
 				FC536F302A1BD03200C7EE51 /* AppDelegate.swift in Sources */,
+				FCBB767F2A1E0E5E00854A41 /* Extensions.swift in Sources */,
 				FCBB765D2A1CE82600854A41 /* VerticalStackView.swift in Sources */,
 				FC536F472A1BDF6B00C7EE51 /* AppsSearchController.swift in Sources */,
 				FCBB767A2A1DEA0A00854A41 /* AppsHorizontalController.swift in Sources */,
