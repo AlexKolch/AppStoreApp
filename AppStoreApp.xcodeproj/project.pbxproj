@@ -31,6 +31,8 @@
 		FCBB76852A1E299A00854A41 /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76842A1E299A00854A41 /* AppsHeaderCell.swift */; };
 		FCBB76872A1E47A200854A41 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76862A1E47A200854A41 /* AppGroup.swift */; };
 		FCBB76892A1F2DB500854A41 /* HeaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76882A1F2DB500854A41 /* HeaderApp.swift */; };
+		FCFAACEC2A1F873E00AD1C00 /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAACEB2A1F873E00AD1C00 /* HorizontalSnappingController.swift */; };
+		FCFAACEE2A1F90E800AD1C00 /* BetterSnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAACED2A1F90E800AD1C00 /* BetterSnappingLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		FCBB76842A1E299A00854A41 /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
 		FCBB76862A1E47A200854A41 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		FCBB76882A1F2DB500854A41 /* HeaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderApp.swift; sourceTree = "<group>"; };
+		FCFAACEB2A1F873E00AD1C00 /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
+		FCFAACED2A1F90E800AD1C00 /* BetterSnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnappingLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 				FCBB76742A1DE2D600854A41 /* Search */,
 				FC536F432A1BD09A00C7EE51 /* BaseTabBarController.swift */,
 				FCBB76722A1DE0D900854A41 /* BaseListController.swift */,
+				FCFAACEB2A1F873E00AD1C00 /* HorizontalSnappingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				FCBB765A2A1CDFEF00854A41 /* 05_UIView+Layout.swift */,
+				FCFAACED2A1F90E800AD1C00 /* BetterSnappingLayout.swift */,
 				FCBB765C2A1CE82600854A41 /* VerticalStackView.swift */,
 				FCBB767E2A1E0E5E00854A41 /* Extensions.swift */,
 			);
@@ -278,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCBB76632A1D127000854A41 /* NetworkService.swift in Sources */,
+				FCFAACEE2A1F90E800AD1C00 /* BetterSnappingLayout.swift in Sources */,
 				FCBB765B2A1CDFEF00854A41 /* 05_UIView+Layout.swift in Sources */,
 				FCBB76602A1D064000854A41 /* SearchResult.swift in Sources */,
 				FCBB76872A1E47A200854A41 /* AppGroup.swift in Sources */,
@@ -294,6 +301,7 @@
 				FCBB767F2A1E0E5E00854A41 /* Extensions.swift in Sources */,
 				FCBB765D2A1CE82600854A41 /* VerticalStackView.swift in Sources */,
 				FC536F472A1BDF6B00C7EE51 /* AppsSearchController.swift in Sources */,
+				FCFAACEC2A1F873E00AD1C00 /* HorizontalSnappingController.swift in Sources */,
 				FCBB767A2A1DEA0A00854A41 /* AppsHorizontalController.swift in Sources */,
 				FC536F322A1BD03200C7EE51 /* SceneDelegate.swift in Sources */,
 				FCBB76832A1E265E00854A41 /* AppsHeaderHorizontalController.swift in Sources */,
