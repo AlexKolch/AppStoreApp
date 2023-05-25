@@ -89,8 +89,9 @@ extension AppsSearchController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         ///Delay before search
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in
             NetworkService.shared.fetchApps(searchTerm: searchText) { results, error in
+                guard let results = results else { return }
                 self.appResults = results ///get back our result
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
