@@ -9,14 +9,13 @@ import UIKit
 
 class AppsHeaderCell: UICollectionViewCell {
 
-    private let companyLabel = UILabel(text: "Facebook", font: .boldSystemFont(ofSize: 12))
-    private let titleLabel = UILabel(text: "Keeping up with friends is faster than ever", font: .systemFont(ofSize: 30))
-    private let imageView = UIImageView(cornerRadius: 8)
+    let companyLabel = UILabel(text: "Facebook", font: .boldSystemFont(ofSize: 12))
+    let titleLabel = UILabel(text: "Keeping up with friends is faster than ever", font: .systemFont(ofSize: 20))
+    let imageView = UIImageView(cornerRadius: 8)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        imageView.backgroundColor = .red
         titleLabel.numberOfLines = 2
         companyLabel.textColor = .blue
 

@@ -47,6 +47,25 @@ class NetworkService {
         fetchAppGroup(urlString: urlString, completion: completion)
     }
 
+    func fetchHeaderApps(completion: @escaping ([HeaderApp]?, Error?) -> ()) {
+        let urlString = "https://api.letsbuildthatapp.com/appstore/social"
+
+        guard let url = URL(string: urlString) else { return }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            do {
+                let objects = try JSONDecoder().decode([HeaderApp].self, from: data!)
+                //appGroup.feed.results.forEach({print($0.name)})
+                completion(objects, nil)
+            } catch let jsonError {
+                completion(nil, jsonError)
+            }
+        }.resume()
+    }
+
     //Helper
     func fetchAppGroup(urlString: String, completion: @escaping (AppGroup?, Error?) -> Void) {
         guard let url = URL(string: urlString) else { return }

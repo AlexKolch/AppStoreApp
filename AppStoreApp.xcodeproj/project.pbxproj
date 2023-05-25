@@ -30,6 +30,7 @@
 		FCBB76832A1E265E00854A41 /* AppsHeaderHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76822A1E265E00854A41 /* AppsHeaderHorizontalController.swift */; };
 		FCBB76852A1E299A00854A41 /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76842A1E299A00854A41 /* AppsHeaderCell.swift */; };
 		FCBB76872A1E47A200854A41 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76862A1E47A200854A41 /* AppGroup.swift */; };
+		FCBB76892A1F2DB500854A41 /* HeaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76882A1F2DB500854A41 /* HeaderApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		FCBB76822A1E265E00854A41 /* AppsHeaderHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderHorizontalController.swift; sourceTree = "<group>"; };
 		FCBB76842A1E299A00854A41 /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
 		FCBB76862A1E47A200854A41 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		FCBB76882A1F2DB500854A41 /* HeaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			children = (
 				FCBB765F2A1D064000854A41 /* SearchResult.swift */,
 				FCBB76862A1E47A200854A41 /* AppGroup.swift */,
+				FCBB76882A1F2DB500854A41 /* HeaderApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				FCBB765B2A1CDFEF00854A41 /* 05_UIView+Layout.swift in Sources */,
 				FCBB76602A1D064000854A41 /* SearchResult.swift in Sources */,
 				FCBB76872A1E47A200854A41 /* AppGroup.swift in Sources */,
+				FCBB76892A1F2DB500854A41 /* HeaderApp.swift in Sources */,
 				FCBB76712A1DE00700854A41 /* AppsController.swift in Sources */,
 				FCBB76852A1E299A00854A41 /* AppsHeaderCell.swift in Sources */,
 				FC536F4A2A1BE6CA00C7EE51 /* SearchResultsCell.swift in Sources */,
