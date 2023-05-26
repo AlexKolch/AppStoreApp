@@ -33,6 +33,8 @@
 		FCBB76892A1F2DB500854A41 /* HeaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76882A1F2DB500854A41 /* HeaderApp.swift */; };
 		FCFAACEC2A1F873E00AD1C00 /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAACEB2A1F873E00AD1C00 /* HorizontalSnappingController.swift */; };
 		FCFAACEE2A1F90E800AD1C00 /* BetterSnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAACED2A1F90E800AD1C00 /* BetterSnappingLayout.swift */; };
+		FCFAACF12A20C1AB00AD1C00 /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAACF02A20C1AB00AD1C00 /* AppDetailController.swift */; };
+		FCFAACF42A20C7D200AD1C00 /* AppDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAACF32A20C7D200AD1C00 /* AppDetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		FCBB76882A1F2DB500854A41 /* HeaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderApp.swift; sourceTree = "<group>"; };
 		FCFAACEB2A1F873E00AD1C00 /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
 		FCFAACED2A1F90E800AD1C00 /* BetterSnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnappingLayout.swift; sourceTree = "<group>"; };
+		FCFAACF02A20C1AB00AD1C00 /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
+		FCFAACF32A20C7D200AD1C00 /* AppDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,7 @@
 		FCBB76752A1DE2E300854A41 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				FCFAACEF2A20C16E00AD1C00 /* Detail */,
 				FCBB76702A1DE00700854A41 /* AppsController.swift */,
 				FCBB76792A1DEA0A00854A41 /* AppsHorizontalController.swift */,
 				FCBB76822A1E265E00854A41 /* AppsHeaderHorizontalController.swift */,
@@ -190,6 +195,7 @@
 		FCBB76762A1DE4FD00854A41 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				FCFAACF22A20C7B700AD1C00 /* Detail */,
 				FCBB76772A1DE52E00854A41 /* AppsGroupCell.swift */,
 				FCBB767C2A1E0D6400854A41 /* AppRowCell.swift */,
 				FCBB76802A1E23B100854A41 /* AppsHeader.swift */,
@@ -204,6 +210,22 @@
 				FC536F492A1BE6CA00C7EE51 /* SearchResultsCell.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		FCFAACEF2A20C16E00AD1C00 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FCFAACF02A20C1AB00AD1C00 /* AppDetailController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		FCFAACF22A20C7B700AD1C00 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FCFAACF32A20C7D200AD1C00 /* AppDetailCell.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +315,7 @@
 				FCBB76852A1E299A00854A41 /* AppsHeaderCell.swift in Sources */,
 				FC536F4A2A1BE6CA00C7EE51 /* SearchResultsCell.swift in Sources */,
 				FCBB76732A1DE0D900854A41 /* BaseListController.swift in Sources */,
+				FCFAACF42A20C7D200AD1C00 /* AppDetailCell.swift in Sources */,
 				FCBB767D2A1E0D6400854A41 /* AppRowCell.swift in Sources */,
 				FC536F442A1BD09A00C7EE51 /* BaseTabBarController.swift in Sources */,
 				FCBB76812A1E23B100854A41 /* AppsHeader.swift in Sources */,
@@ -301,6 +324,7 @@
 				FCBB767F2A1E0E5E00854A41 /* Extensions.swift in Sources */,
 				FCBB765D2A1CE82600854A41 /* VerticalStackView.swift in Sources */,
 				FC536F472A1BDF6B00C7EE51 /* AppsSearchController.swift in Sources */,
+				FCFAACF12A20C1AB00AD1C00 /* AppDetailController.swift in Sources */,
 				FCFAACEC2A1F873E00AD1C00 /* HorizontalSnappingController.swift in Sources */,
 				FCBB767A2A1DEA0A00854A41 /* AppsHorizontalController.swift in Sources */,
 				FC536F322A1BD03200C7EE51 /* SceneDelegate.swift in Sources */,
