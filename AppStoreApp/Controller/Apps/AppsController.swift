@@ -108,6 +108,13 @@ class AppsController: BaseListController, UICollectionViewDelegateFlowLayout {
         cell.titleLabel.text = group.feed.title
         cell.horizontalController.appGroup = group //передаем во вложенный контр. данные
         cell.horizontalController.collectionView.reloadData() //обязательно перезагружаем
+        cell.horizontalController.didSelectHandler = { [weak self] result in
+
+            let controller = AppDetailController()
+            controller.appId = result.id
+            controller.navigationItem.title = result.name
+            self?.navigationController?.pushViewController(controller, animated: true)
+        }
 
         return cell
     }
