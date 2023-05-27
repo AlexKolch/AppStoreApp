@@ -35,6 +35,8 @@
 		FCFAACEE2A1F90E800AD1C00 /* BetterSnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAACED2A1F90E800AD1C00 /* BetterSnappingLayout.swift */; };
 		FCFAACF12A20C1AB00AD1C00 /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAACF02A20C1AB00AD1C00 /* AppDetailController.swift */; };
 		FCFAACF42A20C7D200AD1C00 /* AppDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAACF32A20C7D200AD1C00 /* AppDetailCell.swift */; };
+		FCFAACF62A21E0A200AD1C00 /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAACF52A21E0A200AD1C00 /* PreviewCell.swift */; };
+		FCFAACF82A21E3A400AD1C00 /* PreviewScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAACF72A21E3A400AD1C00 /* PreviewScreenController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		FCFAACED2A1F90E800AD1C00 /* BetterSnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnappingLayout.swift; sourceTree = "<group>"; };
 		FCFAACF02A20C1AB00AD1C00 /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
 		FCFAACF32A20C7D200AD1C00 /* AppDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCell.swift; sourceTree = "<group>"; };
+		FCFAACF52A21E0A200AD1C00 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
+		FCFAACF72A21E3A400AD1C00 /* PreviewScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				FCFAACF02A20C1AB00AD1C00 /* AppDetailController.swift */,
+				FCFAACF72A21E3A400AD1C00 /* PreviewScreenController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				FCFAACF32A20C7D200AD1C00 /* AppDetailCell.swift */,
+				FCFAACF52A21E0A200AD1C00 /* PreviewCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -321,9 +327,11 @@
 				FCBB76812A1E23B100854A41 /* AppsHeader.swift in Sources */,
 				FCBB76782A1DE52E00854A41 /* AppsGroupCell.swift in Sources */,
 				FC536F302A1BD03200C7EE51 /* AppDelegate.swift in Sources */,
+				FCFAACF62A21E0A200AD1C00 /* PreviewCell.swift in Sources */,
 				FCBB767F2A1E0E5E00854A41 /* Extensions.swift in Sources */,
 				FCBB765D2A1CE82600854A41 /* VerticalStackView.swift in Sources */,
 				FC536F472A1BDF6B00C7EE51 /* AppsSearchController.swift in Sources */,
+				FCFAACF82A21E3A400AD1C00 /* PreviewScreenController.swift in Sources */,
 				FCFAACF12A20C1AB00AD1C00 /* AppDetailController.swift in Sources */,
 				FCFAACEC2A1F873E00AD1C00 /* HorizontalSnappingController.swift in Sources */,
 				FCBB767A2A1DEA0A00854A41 /* AppsHorizontalController.swift in Sources */,
