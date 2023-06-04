@@ -11,37 +11,16 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
     private let detailCellId = "detailCellId"
     private let previewCellId = "previewCellId"
     private let reviewRowCellId = "reviewRowCell"
+    fileprivate let appId: String
 
-    ///Конкретный Id приложения
-    var appId: String! {
-        didSet {
-            print("here me app ID:", appId!)
-            let urlString = "https://itunes.apple.com/lookup?id=\(appId ?? "")"
-            NetworkService.shared.fetchGenericJSONData(urlString: urlString) { (result: SearchResult?, error) in
-                let app = result?.results.first
-                self.app = app ///в структуру передаем конкретный объект по id
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
+    // dependency injection constructor
+    init(appId: String) {
+        self.appId = appId
+        super.init()
+    }
 
-            let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId ?? "")/sortby=mostrecent/json?l=en&cc=us"
-            NetworkService.shared.fetchGenericJSONData(urlString: reviewsUrl) { (reviews: Reviews?, error) in
-
-                if let err = error {
-                    print("Failed", err)
-                    return
-                }
-                self.reviews = reviews
-               // reviews?.feed.entry.forEach({print($0.rating.label)})
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-//                reviews?.feed.title.label.forEach({ label in
-//                    print(label)
-//                })
-            }
-        }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     var app: Results? ///Cсылка на структуру данных
@@ -55,6 +34,36 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
         collectionView.register(ReviewRowCell.self, forCellWithReuseIdentifier: reviewRowCellId)
 
         navigationItem.largeTitleDisplayMode = .never
+        fetchData()
+    }
+
+    fileprivate func fetchData() {
+        let urlString = "https://itunes.apple.com/lookup?id=\(appId)"
+
+        NetworkService.shared.fetchGenericJSONData(urlString: urlString) { (result: SearchResult?, error) in
+            let app = result?.results.first
+            self.app = app ///в структуру передаем конкретный объект по id
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+
+        let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId)/sortby=mostrecent/json?l=en&cc=us"
+
+        NetworkService.shared.fetchGenericJSONData(urlString: reviewsUrl) { (reviews: Reviews?, error) in
+            if let err = error {
+                print("Failed", err)
+                return
+            }
+            self.reviews = reviews
+            // reviews?.feed.entry.forEach({print($0.rating.label)})
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+            //reviews?.feed.title.label.forEach({ label in
+            //print(label)
+            //})
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

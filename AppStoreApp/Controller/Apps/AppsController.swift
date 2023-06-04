@@ -7,13 +7,11 @@
 
 import UIKit
 
-//private let reuseIdentifier = "Cell"
-
 class AppsController: BaseListController, UICollectionViewDelegateFlowLayout {
 
     private let cellId = "cellID"
     private let headerId = "headerID"
-   // fileprivate var editorsGames: AppGroup?
+
     fileprivate var appGroups = [AppGroup]()
     fileprivate var headerApps = [HeaderApp]()
 
@@ -47,15 +45,9 @@ class AppsController: BaseListController, UICollectionViewDelegateFlowLayout {
 
         dispatchGroup.enter()
         NetworkService.shared.fetchTopPaid { response, error in
-            //self.editorsGames = response
+
             dispatchGroup.leave()
             group1 = response
-//            if let group = response {
-//                self.appGroups.append(group)
-//            }
-//            DispatchQueue.main.async {
-//                self.collectionView.reloadData()
-//            }
         }
         dispatchGroup.enter()
         NetworkService.shared.fetchTopFree { response, error in
@@ -65,11 +57,10 @@ class AppsController: BaseListController, UICollectionViewDelegateFlowLayout {
 
         dispatchGroup.enter()
         NetworkService.shared.fetchHeaderApps { response, error in
-            //Here should be error
+
             dispatchGroup.leave()
-           // response?.forEach({print($0.name)})
+
             self.headerApps = response ?? []
-            //self.collectionView.reloadData()
         }
         //Completion
         dispatchGroup.notify(queue: .main) {
@@ -110,8 +101,7 @@ class AppsController: BaseListController, UICollectionViewDelegateFlowLayout {
         cell.horizontalController.collectionView.reloadData() //обязательно перезагружаем
         cell.horizontalController.didSelectHandler = { [weak self] result in
 
-            let controller = AppDetailController()
-            controller.appId = result.id
+            let controller = AppDetailController(appId: result.id)
             controller.navigationItem.title = result.name
             self?.navigationController?.pushViewController(controller, animated: true)
         }

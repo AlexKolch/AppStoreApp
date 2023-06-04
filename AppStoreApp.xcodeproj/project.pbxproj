@@ -130,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				FCBB76752A1DE2E300854A41 /* Apps */,
-				FCBB76742A1DE2D600854A41 /* Search */,
 				FC536F432A1BD09A00C7EE51 /* BaseTabBarController.swift */,
 				FCBB76722A1DE0D900854A41 /* BaseListController.swift */,
 				FCFAACEB2A1F873E00AD1C00 /* HorizontalSnappingController.swift */,
@@ -197,6 +196,7 @@
 		FCBB76752A1DE2E300854A41 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				FCBB76742A1DE2D600854A41 /* Search */,
 				FCFAACEF2A20C16E00AD1C00 /* Detail */,
 				FCBB76702A1DE00700854A41 /* AppsController.swift */,
 				FCBB76792A1DEA0A00854A41 /* AppsHorizontalController.swift */,

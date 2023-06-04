@@ -82,6 +82,13 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         
         return cell
     }
+    ///Переход на detail по нажатию ячейки
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let appId = String(appResults[indexPath.item].trackId) ///Берем ID приложения
+        let appDetailController = AppDetailController(appId: appId)
+
+        navigationController?.pushViewController(appDetailController, animated: true)
+    }
 }
 
 extension AppsSearchController: UISearchBarDelegate {
@@ -91,6 +98,12 @@ extension AppsSearchController: UISearchBarDelegate {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in
             NetworkService.shared.fetchApps(searchTerm: searchText) { results, error in
+                
+                if let error = error {
+                    print("Failed to fetch apps:", error)
+                    return
+                }
+
                 guard let results = results else { return }
                 self.appResults = results ///get back our result
                 DispatchQueue.main.async {
