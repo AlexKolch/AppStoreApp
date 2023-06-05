@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC51FC622A2DF82100C49964 /* TodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC51FC612A2DF82100C49964 /* TodayController.swift */; };
+		FC51FC662A2DF95400C49964 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC51FC652A2DF95400C49964 /* TodayCell.swift */; };
 		FC536F302A1BD03200C7EE51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC536F2F2A1BD03200C7EE51 /* AppDelegate.swift */; };
 		FC536F322A1BD03200C7EE51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC536F312A1BD03200C7EE51 /* SceneDelegate.swift */; };
 		FC536F372A1BD03200C7EE51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC536F352A1BD03200C7EE51 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC51FC612A2DF82100C49964 /* TodayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayController.swift; sourceTree = "<group>"; };
+		FC51FC652A2DF95400C49964 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		FC536F2C2A1BD03200C7EE51 /* AppStoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC536F2F2A1BD03200C7EE51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC536F312A1BD03200C7EE51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC51FC602A2DF7ED00C49964 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				FC51FC612A2DF82100C49964 /* TodayController.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		FC51FC632A2DF92400C49964 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				FC51FC652A2DF95400C49964 /* TodayCell.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
 		FC536F232A1BD03200C7EE51 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +149,8 @@
 		FC536F452A1BDF3C00C7EE51 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FC51FC602A2DF7ED00C49964 /* Today */,
+				FCBB76742A1DE2D600854A41 /* Search */,
 				FCBB76752A1DE2E300854A41 /* Apps */,
 				FC536F432A1BD09A00C7EE51 /* BaseTabBarController.swift */,
 				FCBB76722A1DE0D900854A41 /* BaseListController.swift */,
@@ -140,6 +162,7 @@
 		FC536F482A1BE66800C7EE51 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FC51FC632A2DF92400C49964 /* Today */,
 				FCBB76762A1DE4FD00854A41 /* Apps */,
 				FCBB767B2A1E0C1200854A41 /* Search */,
 			);
@@ -196,7 +219,6 @@
 		FCBB76752A1DE2E300854A41 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
-				FCBB76742A1DE2D600854A41 /* Search */,
 				FCFAACEF2A20C16E00AD1C00 /* Detail */,
 				FCBB76702A1DE00700854A41 /* AppsController.swift */,
 				FCBB76792A1DEA0A00854A41 /* AppsHorizontalController.swift */,
@@ -334,6 +356,7 @@
 				FCBB76852A1E299A00854A41 /* AppsHeaderCell.swift in Sources */,
 				FC536F4A2A1BE6CA00C7EE51 /* SearchResultsCell.swift in Sources */,
 				FCFAACFA2A22754500AD1C00 /* ReviewRowCell.swift in Sources */,
+				FC51FC662A2DF95400C49964 /* TodayCell.swift in Sources */,
 				FCBB76732A1DE0D900854A41 /* BaseListController.swift in Sources */,
 				FCFAACF42A20C7D200AD1C00 /* AppDetailCell.swift in Sources */,
 				FCBB767D2A1E0D6400854A41 /* AppRowCell.swift in Sources */,
@@ -345,6 +368,7 @@
 				FCBB767F2A1E0E5E00854A41 /* Extensions.swift in Sources */,
 				FCFAACFC2A227B6900AD1C00 /* ReviewsController.swift in Sources */,
 				FCFAAD002A2316F200AD1C00 /* Reviews.swift in Sources */,
+				FC51FC622A2DF82100C49964 /* TodayController.swift in Sources */,
 				FCBB765D2A1CE82600854A41 /* VerticalStackView.swift in Sources */,
 				FC536F472A1BDF6B00C7EE51 /* AppsSearchController.swift in Sources */,
 				FCFAACF82A21E3A400AD1C00 /* PreviewScreenController.swift in Sources */,
