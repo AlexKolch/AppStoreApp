@@ -9,6 +9,7 @@ import UIKit
 
 class TodayController: BaseListController {
     private let cellId = "CellId"
+    fileprivate var startingFrame: CGRect?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +30,33 @@ class TodayController: BaseListController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Will be animated...")
+        let redView = UIView()
+        redView.backgroundColor = .red
+        redView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleRemoveRedView)))
+        view.addSubview(redView)
+
+        guard let cell = collectionView.cellForItem(at: indexPath) else {return} ///Объект из ячейки по индексу
+
+        guard let startingFrame = cell.superview?.convert(cell.frame, to: nil) else {return}
+        self.startingFrame = startingFrame
+
+        redView.frame = startingFrame
+        redView.layer.cornerRadius = 16
+
+        ///Анимация открытия ячейки на весь экран
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut) {
+            redView.frame = self.view.frame
+        }
     }
-    
+
+    @objc func handleRemoveRedView(gesture: UITapGestureRecognizer) {
+        ///Анимация закрытия ячейки и возвращение к startingFrame
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut) {
+            gesture.view?.frame = self.startingFrame ?? .zero
+        } completion: { _ in
+            gesture.view?.removeFromSuperview()
+        }
+    }
 }
 
 extension TodayController: UICollectionViewDelegateFlowLayout {
