@@ -33,6 +33,8 @@
 		FCBB76852A1E299A00854A41 /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76842A1E299A00854A41 /* AppsHeaderCell.swift */; };
 		FCBB76872A1E47A200854A41 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76862A1E47A200854A41 /* AppGroup.swift */; };
 		FCBB76892A1F2DB500854A41 /* HeaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB76882A1F2DB500854A41 /* HeaderApp.swift */; };
+		FCD23ACB2A405D7900BC993B /* AppFullScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD23ACA2A405D7900BC993B /* AppFullScreenController.swift */; };
+		FCD23ACD2A40A4AE00BC993B /* AppFullScreenDesriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD23ACC2A40A4AE00BC993B /* AppFullScreenDesriptionCell.swift */; };
 		FCFAACEC2A1F873E00AD1C00 /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAACEB2A1F873E00AD1C00 /* HorizontalSnappingController.swift */; };
 		FCFAACEE2A1F90E800AD1C00 /* BetterSnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAACED2A1F90E800AD1C00 /* BetterSnappingLayout.swift */; };
 		FCFAACF12A20C1AB00AD1C00 /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAACF02A20C1AB00AD1C00 /* AppDetailController.swift */; };
@@ -73,6 +75,8 @@
 		FCBB76842A1E299A00854A41 /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
 		FCBB76862A1E47A200854A41 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		FCBB76882A1F2DB500854A41 /* HeaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderApp.swift; sourceTree = "<group>"; };
+		FCD23ACA2A405D7900BC993B /* AppFullScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullScreenController.swift; sourceTree = "<group>"; };
+		FCD23ACC2A40A4AE00BC993B /* AppFullScreenDesriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullScreenDesriptionCell.swift; sourceTree = "<group>"; };
 		FCFAACEB2A1F873E00AD1C00 /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
 		FCFAACED2A1F90E800AD1C00 /* BetterSnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnappingLayout.swift; sourceTree = "<group>"; };
 		FCFAACF02A20C1AB00AD1C00 /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				FC51FC612A2DF82100C49964 /* TodayController.swift */,
+				FCD23ACA2A405D7900BC993B /* AppFullScreenController.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				FC51FC652A2DF95400C49964 /* TodayCell.swift */,
+				FCD23ACC2A40A4AE00BC993B /* AppFullScreenDesriptionCell.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 				FCFAACF42A20C7D200AD1C00 /* AppDetailCell.swift in Sources */,
 				FCBB767D2A1E0D6400854A41 /* AppRowCell.swift in Sources */,
 				FC536F442A1BD09A00C7EE51 /* BaseTabBarController.swift in Sources */,
+				FCD23ACD2A40A4AE00BC993B /* AppFullScreenDesriptionCell.swift in Sources */,
 				FCBB76812A1E23B100854A41 /* AppsHeader.swift in Sources */,
 				FCBB76782A1DE52E00854A41 /* AppsGroupCell.swift in Sources */,
 				FC536F302A1BD03200C7EE51 /* AppDelegate.swift in Sources */,
@@ -373,6 +380,7 @@
 				FC536F472A1BDF6B00C7EE51 /* AppsSearchController.swift in Sources */,
 				FCFAACF82A21E3A400AD1C00 /* PreviewScreenController.swift in Sources */,
 				FCFAACF12A20C1AB00AD1C00 /* AppDetailController.swift in Sources */,
+				FCD23ACB2A405D7900BC993B /* AppFullScreenController.swift in Sources */,
 				FCFAACEC2A1F873E00AD1C00 /* HorizontalSnappingController.swift in Sources */,
 				FCBB767A2A1DEA0A00854A41 /* AppsHorizontalController.swift in Sources */,
 				FC536F322A1BD03200C7EE51 /* SceneDelegate.swift in Sources */,
