@@ -17,6 +17,8 @@ class AppFullScreenController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
+        tableView.contentInsetAdjustmentBehavior = .never
+        tableView.contentInset = .init(top: 0, left: 0, bottom: 24, right: 0)
     }
 
     // MARK: - Table view data source
@@ -30,6 +32,7 @@ class AppFullScreenController: UITableViewController {
             let headerCell = AppFullscreenHeaderCell()
             headerCell.closeButton.addTarget(self, action: #selector(handleDismiss), for: .touchUpInside)
             headerCell.todayCell.todayItem = todayItem
+            headerCell.todayCell.layer.cornerRadius = 0
           return headerCell
         }
 

@@ -28,6 +28,7 @@ class TodayController: BaseListController {
 
         collectionView.backgroundColor = #colorLiteral(red: 0.948936522, green: 0.9490727782, blue: 0.9489068389, alpha: 1)
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.contentInset = .init(top: 0, left: 0, bottom: 24, right: 0)
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,6 +56,8 @@ class TodayController: BaseListController {
         addChild(appFullscreenController)
 
         self.appFullscreenController = appFullscreenController
+
+        self.collectionView.isUserInteractionEnabled = false
 
         guard let cell = collectionView.cellForItem(at: indexPath) else {return} ///Объект ячейки по индексу
 
@@ -109,6 +112,7 @@ class TodayController: BaseListController {
         }, completion: { _ in
             self.appFullscreenController.view.removeFromSuperview()
             self.appFullscreenController.removeFromParent()
+            self.collectionView.isUserInteractionEnabled = true
         })
     }
 }

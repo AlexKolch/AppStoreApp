@@ -15,6 +15,8 @@ class TodayCell: UICollectionViewCell {
             titleLabel.text = todayItem.title
             imageView.image = todayItem.image
             descriptionLabel.text = todayItem.description
+
+            backgroundColor = todayItem.backgroundColor
         }
     }
 
@@ -37,7 +39,7 @@ class TodayCell: UICollectionViewCell {
 
         let stackView = VerticalStackView(arrangedSubviews: [categoryLabel, titleLabel, imageContainerView, descriptionLabel], spacing: 8)
         addSubview(stackView)
-        stackView.fillSuperview(padding: .init(top: 24, left: 24, bottom: 24, right: 24))
+        stackView.fillSuperview(padding: .init(top: 48, left: 24, bottom: 24, right: 24))
     }
 
     required init?(coder: NSCoder) {
