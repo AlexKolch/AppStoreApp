@@ -10,6 +10,7 @@ import UIKit
 class AppFullscreenHeaderCell: UITableViewCell {
 
     let todayCell = TodayCell()
+
     let closeButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "close_button"), for: .normal)

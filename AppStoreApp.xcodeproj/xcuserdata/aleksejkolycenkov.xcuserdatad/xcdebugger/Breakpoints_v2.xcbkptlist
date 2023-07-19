@@ -20,5 +20,144 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1B4DAA4-CF93-4F9D-8FAB-9E8F238B99BA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppStoreApp/Controller/Today/AppFullScreenController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "AppFullScreenController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "D1B4DAA4-CF93-4F9D-8FAB-9E8F238B99BA - fef3215d02ebc261"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppStoreApp.AppFullScreenController.dismissHandler.getter : Swift.Optional&lt;() -&gt; ()&gt;"
+                  moduleName = "AppStoreApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksejkolycenkov/Documents/XCode/Project/AppStoreApp/AppStoreApp/AppStoreApp/Controller/Today/AppFullScreenController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "D1B4DAA4-CF93-4F9D-8FAB-9E8F238B99BA - e6583b9daaed4275"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppStoreApp.AppFullScreenController.dismissHandler.setter : Swift.Optional&lt;() -&gt; ()&gt;"
+                  moduleName = "AppStoreApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksejkolycenkov/Documents/XCode/Project/AppStoreApp/AppStoreApp/AppStoreApp/Controller/Today/AppFullScreenController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "D1B4DAA4-CF93-4F9D-8FAB-9E8F238B99BA - 408967add5e43264"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppStoreApp.AppFullScreenController.dismissHandler.modify : Swift.Optional&lt;() -&gt; ()&gt;"
+                  moduleName = "AppStoreApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksejkolycenkov/Documents/XCode/Project/AppStoreApp/AppStoreApp/AppStoreApp/Controller/Today/AppFullScreenController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "D1B4DAA4-CF93-4F9D-8FAB-9E8F238B99BA - fc7eb6f5a2aacee4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppStoreApp.AppFullScreenController.dismissHandler.modify : Swift.Optional&lt;() -&gt; ()&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "AppStoreApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksejkolycenkov/Documents/XCode/Project/AppStoreApp/AppStoreApp/AppStoreApp/Controller/Today/AppFullScreenController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "D1B4DAA4-CF93-4F9D-8FAB-9E8F238B99BA - e975662912115fa1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppStoreApp.AppFullScreenController.init(style: __C.UITableViewStyle) -&gt; AppStoreApp.AppFullScreenController"
+                  moduleName = "AppStoreApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksejkolycenkov/Documents/XCode/Project/AppStoreApp/AppStoreApp/AppStoreApp/Controller/Today/AppFullScreenController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "D1B4DAA4-CF93-4F9D-8FAB-9E8F238B99BA - 217ea74c0dc0dffb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppStoreApp.AppFullScreenController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; AppStoreApp.AppFullScreenController"
+                  moduleName = "AppStoreApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksejkolycenkov/Documents/XCode/Project/AppStoreApp/AppStoreApp/AppStoreApp/Controller/Today/AppFullScreenController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "D1B4DAA4-CF93-4F9D-8FAB-9E8F238B99BA - 7005e72618a9a0c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppStoreApp.AppFullScreenController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;AppStoreApp.AppFullScreenController&gt;"
+                  moduleName = "AppStoreApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksejkolycenkov/Documents/XCode/Project/AppStoreApp/AppStoreApp/AppStoreApp/Controller/Today/AppFullScreenController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3F75DE1-3E90-4071-A56C-4638E0115B12"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppStoreApp/Controller/Today/AppFullScreenController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "handleDismiss(button:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
