@@ -53,6 +53,12 @@ class NetworkService {
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
 
+    func fetchBooks(completion: @escaping (AppGroup?, Error?) -> ()) {
+        let urlString = "https://rss.applemarketingtools.com/api/v2/us/books/top-free/10/books.json"
+
+        fetchAppGroup(urlString: urlString, completion: completion)
+    }
+
     //Helper
     func fetchAppGroup(urlString: String, completion: @escaping (AppGroup?, Error?) -> Void) {
      fetchGenericJSONData(urlString: urlString, completion: completion)
