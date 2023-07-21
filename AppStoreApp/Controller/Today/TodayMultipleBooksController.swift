@@ -19,17 +19,15 @@ class TodayMultipleBooksController: BaseListController {
         collectionView.backgroundColor = .white
 
         collectionView.register(MultipleBookCell.self, forCellWithReuseIdentifier: cellId)
-
-        NetworkService.shared.fetchBooks { AppGroup, Error in
-
-            self.result = AppGroup?.feed.results ?? []
-
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
+ //never execute fetch code inside view
+        //        NetworkService.shared.fetchBooks { AppGroup, Error in
+        //            self.result = AppGroup?.feed.results ?? []
+        //            DispatchQueue.main.async {
+        //                self.collectionView.reloadData()
+        //            }
+        //        }
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        // return min(4, result.count)
         return result.count

@@ -18,21 +18,61 @@ class TodayController: BaseListController {
 
     fileprivate var startingFrame: CGRect?
 
-    let items = [
-        TodayItem.init(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "All the tools and apps you need to intelligently organize your life the right way.", backgroundColor: .white, cellType: .single),
-        TodayItem.init(category: "HOLIDAYS", title: "Travel on a Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9838578105, green: 0.9588007331, blue: 0.7274674177, alpha: 1), cellType: .single),
-        TodayItem.init(category: "MULTIPLE CEL", title: "Cell is developing", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple)
-        ]
+    var items = [TodayItem]()
+
+    let activityIndecator: UIActivityIndicatorView = {
+        let aiv = UIActivityIndicatorView(style: .large)
+        aiv.color = .darkGray
+        aiv.startAnimating()
+        aiv.hidesWhenStopped = true
+        return aiv
+    }()
 
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
 
+        view.addSubview(activityIndecator)
+        activityIndecator.centerInSuperview()
+
+        fetchData()
+
         collectionView.backgroundColor = #colorLiteral(red: 0.948936522, green: 0.9490727782, blue: 0.9489068389, alpha: 1)
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: TodayItem.CellType.single.rawValue)
-        collectionView.register(TodayMultipleAppCell.self, forCellWithReuseIdentifier: TodayItem.CellType.multiple.rawValue)
+        collectionView.register(TodayMultipleBookCell.self, forCellWithReuseIdentifier: TodayItem.CellType.multiple.rawValue)
         collectionView.contentInset = .init(top: 0, left: 0, bottom: 24, right: 0)
+    }
+
+    fileprivate func fetchData() {
+//DispatchGroup for next cells
+        let dispatchGroup = DispatchGroup()
+        var fetchedBooks: AppGroup?
+
+        dispatchGroup.enter()
+        NetworkService.shared.fetchBooks { appGroup, error in
+            if let error = error {
+                print("Failed to fetch books:", error)
+            }
+          
+            fetchedBooks = appGroup
+            dispatchGroup.leave()
+        }
+
+        //completion block
+        dispatchGroup.notify(queue: .main) {
+            //I'll have access to books
+            self.activityIndecator.stopAnimating()
+            
+            self.items = [
+                TodayItem.init(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "All the tools and apps you need to intelligently organize your life the right way.", backgroundColor: .white, cellType: .single, book: []),
+                
+                TodayItem.init(category: "HOLIDAYS", title: "Travel on a Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9838578105, green: 0.9588007331, blue: 0.7274674177, alpha: 1), cellType: .single, book: []),
+
+                TodayItem.init(category: "Cell is developing", title: fetchedBooks?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, book: fetchedBooks?.feed.results ?? [])
+            ]
+            self.collectionView.reloadData()
+        }
     }
 
     // MARK: - func collectionView
