@@ -9,15 +9,15 @@ import UIKit
 
 class TodayMultipleBookCell: BaseTodayCell {
 
-    let multipleAppsController = TodayMultipleBooksController()
+    let multipleBooksController = TodayMultipleBooksController(mode: .small)
 
     override var todayItem: TodayItem! {
         didSet {
             categoryLabel.text = todayItem.category
             titleLabel.text = todayItem.title
 
-            multipleAppsController.result = todayItem.book
-            multipleAppsController.collectionView.reloadData()
+            multipleBooksController.result = todayItem.book
+            multipleBooksController.collectionView.reloadData()
         }
     }
 
@@ -32,7 +32,7 @@ class TodayMultipleBookCell: BaseTodayCell {
 
         let stackView = VerticalStackView(arrangedSubviews: [categoryLabel,
                                                              titleLabel,
-                                                             multipleAppsController.view], spacing: 12)
+                                                             multipleBooksController.view], spacing: 12)
         addSubview(stackView)
         stackView.fillSuperview(padding: .init(top: 24, left: 24, bottom: 24, right: 24))
     }
