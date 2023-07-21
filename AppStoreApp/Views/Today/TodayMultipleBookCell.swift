@@ -7,19 +7,22 @@
 
 import UIKit
 
-class TodayMultipleAppCell: BaseTodayCell {
+class TodayMultipleBookCell: BaseTodayCell {
+
+    let multipleAppsController = TodayMultipleBooksController()
 
     override var todayItem: TodayItem! {
         didSet {
             categoryLabel.text = todayItem.category
             titleLabel.text = todayItem.title
+
+            multipleAppsController.result = todayItem.book
+            multipleAppsController.collectionView.reloadData()
         }
     }
 
     let categoryLabel = UILabel(text: "LIFE HACK", font: .boldSystemFont(ofSize: 20))
     let titleLabel = UILabel(text: "Utilizing your Time", font: .boldSystemFont(ofSize: 32), numberOfLines: 2)
-
-    let multipleAppsController = TodayMultipleBooksController()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
