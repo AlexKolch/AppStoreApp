@@ -18,7 +18,7 @@ class TodayController: BaseListController {
 
     fileprivate var startingFrame: CGRect?
 
-    var items = [TodayItem]()
+    var items = [TodayItem]() ///здесь будут наши значения ячеек
 
     let activityIndecator: UIActivityIndicatorView = {
         let aiv = UIActivityIndicatorView(style: .large)
@@ -47,7 +47,7 @@ class TodayController: BaseListController {
     fileprivate func fetchData() {
 //DispatchGroup for next cells
         let dispatchGroup = DispatchGroup()
-        var fetchedBooks: AppGroup?
+        var fetchedBooks: AppGroup? ///записываем сюда ответ от сервера
 
         dispatchGroup.enter()
         NetworkService.shared.fetchBooks { appGroup, error in
@@ -69,7 +69,7 @@ class TodayController: BaseListController {
                 
                 TodayItem.init(category: "HOLIDAYS", title: "Travel on a Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9838578105, green: 0.9588007331, blue: 0.7274674177, alpha: 1), cellType: .single, book: []),
 
-                TodayItem.init(category: "Cell is developing", title: fetchedBooks?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, book: fetchedBooks?.feed.results ?? [])
+                TodayItem.init(category: "TODAY BOOKS", title: fetchedBooks?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, book: fetchedBooks?.feed.results ?? [])
             ]
             self.collectionView.reloadData()
         }
@@ -85,7 +85,7 @@ class TodayController: BaseListController {
         let cellId = items[indexPath.item].cellType.rawValue
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BaseTodayCell
-        cell.todayItem = items[indexPath.item]
+        cell.todayItem = items[indexPath.item] ///инициализируем св-во значений значениями из массива установленных объектов!
 
         //multiple app cell
 //        if indexPath.item == 0 {
@@ -101,6 +101,15 @@ class TodayController: BaseListController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        if items[indexPath.item].cellType == .multiple {
+            let fullController = TodayMultipleBooksController(mode: .fullScreen)
+            fullController.result = items[indexPath.item].book
+            fullController.modalPresentationStyle = .fullScreen
+            present(fullController, animated: true)
+        }
+
+        guard items[indexPath.item].cellType == .single else {return}
 
         let appFullscreenController = AppFullScreenController()
         appFullscreenController.todayItem = items[indexPath.item]
