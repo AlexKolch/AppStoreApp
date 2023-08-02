@@ -40,8 +40,13 @@ class TodayController: BaseListController {
 
         collectionView.backgroundColor = #colorLiteral(red: 0.948936522, green: 0.9490727782, blue: 0.9489068389, alpha: 1)
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: TodayItem.CellType.single.rawValue)
-        collectionView.register(TodayMultipleBookCell.self, forCellWithReuseIdentifier: TodayItem.CellType.multiple.rawValue)
+        collectionView.register(TodayMultipleAppCell.self, forCellWithReuseIdentifier: TodayItem.CellType.multiple.rawValue)
         collectionView.contentInset = .init(top: 0, left: 0, bottom: 24, right: 0)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.superview?.setNeedsLayout() ///исправляет баг с съехавшим tabBar
     }
 
     fileprivate func fetchData() {
@@ -50,7 +55,7 @@ class TodayController: BaseListController {
         var fetchedBooks: AppGroup? ///записываем сюда ответ от сервера
 
         dispatchGroup.enter()
-        NetworkService.shared.fetchBooks { appGroup, error in
+        NetworkService.shared.fetchAppsInToday { appGroup, error in
             if let error = error {
                 print("Failed to fetch books:", error)
             }
@@ -65,11 +70,11 @@ class TodayController: BaseListController {
             self.activityIndecator.stopAnimating()
             
             self.items = [
-                TodayItem.init(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "All the tools and apps you need to intelligently organize your life the right way.", backgroundColor: .white, cellType: .single, book: []),
+                TodayItem.init(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "All the tools and apps you need to intelligently organize your life the right way.", backgroundColor: .white, cellType: .single, apps: []),
                 
-                TodayItem.init(category: "HOLIDAYS", title: "Travel on a Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9838578105, green: 0.9588007331, blue: 0.7274674177, alpha: 1), cellType: .single, book: []),
+                TodayItem.init(category: "HOLIDAYS", title: "Travel on a Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9838578105, green: 0.9588007331, blue: 0.7274674177, alpha: 1), cellType: .single, apps: []),
 
-                TodayItem.init(category: "TODAY BOOKS", title: fetchedBooks?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, book: fetchedBooks?.feed.results ?? [])
+                TodayItem.init(category: "TODAY APPS", title: fetchedBooks?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, apps: fetchedBooks?.feed.results ?? [])
             ]
             self.collectionView.reloadData()
         }
@@ -104,13 +109,14 @@ class TodayController: BaseListController {
 
         if items[indexPath.item].cellType == .multiple {
             let fullController = TodayMultipleBooksController(mode: .fullScreen)
-            fullController.result = items[indexPath.item].book
-            fullController.modalPresentationStyle = .fullScreen
-            present(fullController, animated: true)
+            fullController.apps = self.items[indexPath.item].apps
+            //fullController.modalPresentationStyle = .fullScreen
+            // present(fullController, animated: true)
+            navigationController?.pushViewController(fullController, animated: true)
         }
 
         guard items[indexPath.item].cellType == .single else {return}
-
+        
         let appFullscreenController = AppFullScreenController()
         appFullscreenController.todayItem = items[indexPath.item]
         appFullscreenController.dismissHandler = {

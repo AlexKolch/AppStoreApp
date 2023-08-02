@@ -53,8 +53,9 @@ class NetworkService {
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
 
-    func fetchBooks(completion: @escaping (AppGroup?, Error?) -> ()) {
-        let urlString = "https://rss.applemarketingtools.com/api/v2/us/books/top-free/10/books.json"
+    func fetchAppsInToday(completion: @escaping (AppGroup?, Error?) -> ()) {
+        let urlString = "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/50/apps.json"
+       // let urlString = "https://rss.applemarketingtools.com/api/v2/us/books/top-free/10/books.json"
 
         fetchAppGroup(urlString: urlString, completion: completion)
     }

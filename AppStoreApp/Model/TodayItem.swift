@@ -17,7 +17,7 @@ struct TodayItem {
 
     let cellType: CellType
 
-    let book: [Result]
+    let apps: [Result]
 
     enum CellType: String {
         case multiple, single 

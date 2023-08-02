@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TodayMultipleBookCell: BaseTodayCell {
+class TodayMultipleAppCell: BaseTodayCell {
 
     let multipleBooksController = TodayMultipleBooksController(mode: .small)
 
@@ -16,19 +16,18 @@ class TodayMultipleBookCell: BaseTodayCell {
             categoryLabel.text = todayItem.category
             titleLabel.text = todayItem.title
 
-            multipleBooksController.result = todayItem.book
+            multipleBooksController.apps = todayItem.apps
             multipleBooksController.collectionView.reloadData()
         }
     }
 
-    let categoryLabel = UILabel(text: "LIFE HACK", font: .boldSystemFont(ofSize: 20))
-    let titleLabel = UILabel(text: "Utilizing your Time", font: .boldSystemFont(ofSize: 32), numberOfLines: 2)
+    let categoryLabel = UILabel(text: "", font: .boldSystemFont(ofSize: 20))
+    let titleLabel = UILabel(text: "", font: .boldSystemFont(ofSize: 32), numberOfLines: 2)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         backgroundColor = .white
-        layer.cornerRadius = 16
 
         let stackView = VerticalStackView(arrangedSubviews: [categoryLabel,
                                                              titleLabel,

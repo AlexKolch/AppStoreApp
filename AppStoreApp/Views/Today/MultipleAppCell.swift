@@ -7,13 +7,13 @@
 
 import UIKit
 
-class MultipleBookCell: UICollectionViewCell {
+class MultipleAppCell: UICollectionViewCell {
 
-    var books: Result! {
+    var apps: Result! {
         didSet {
-            nameLabel.text = books.name
-            companyLabel.text = books.artistName
-            appIconView.sd_setImage(with: URL(string: books.artworkUrl100))
+            nameLabel.text = apps.name
+            companyLabel.text = apps.artistName
+            appIconView.sd_setImage(with: URL(string: apps.artworkUrl100))
         }
     }
 
